@@ -39,4 +39,8 @@ public class CustomerModel {
     public String getName() {
         return name;
     }
+
+    public ArrayList<CustomerModel> getLinks() {
+        return links;
+    }
 }
