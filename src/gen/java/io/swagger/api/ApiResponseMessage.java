@@ -3,7 +3,7 @@ package io.swagger.api;
 import javax.xml.bind.annotation.XmlTransient;
 
 @javax.xml.bind.annotation.XmlRootElement
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-26T08:46:32.976Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-27T20:43:44.258Z")
 public class ApiResponseMessage {
     public static final int ERROR = 1;
     public static final int WARNING = 2;
@@ -12,10 +12,16 @@ public class ApiResponseMessage {
     public static final int TOO_BUSY = 5;
 
     int code;
+    Object data;
     String type;
     String message;
 
     public ApiResponseMessage() {
+    }
+
+    public ApiResponseMessage(Object data) {
+        this(OK, "Succes");
+        this.data = data;
     }
 
     public ApiResponseMessage(int code, String message) {
@@ -66,5 +72,13 @@ public class ApiResponseMessage {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

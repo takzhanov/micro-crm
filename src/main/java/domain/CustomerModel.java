@@ -1,10 +1,13 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 public class CustomerModel {
     private Long id;
     private String name;
+    @JsonIgnore
     private ArrayList<CustomerModel> links = new ArrayList<>();
 
     public CustomerModel(Long id) {
