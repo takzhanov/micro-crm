@@ -15,7 +15,7 @@ import javax.ws.rs.core.SecurityContext;
 
 
 @io.swagger.annotations.Api(description = "the customers API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-27T20:43:44.258Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-27T23:29:24.415Z")
 public class CustomersApi {
  private final CustomersApiService delegate = CustomersApiServiceFactory.getCustomersApi();
 
@@ -23,7 +23,7 @@ public class CustomersApi {
 
  @Consumes({"application/json"})
  @Produces({"application/json"})
- @io.swagger.annotations.ApiOperation(value = "", notes = "Creates a new customer", response = Customer.class, tags = {})
+ @io.swagger.annotations.ApiOperation(value = "Создать нового клиента", notes = "Creates a new customer", response = Customer.class, tags = {})
  @io.swagger.annotations.ApiResponses(value = {
          @io.swagger.annotations.ApiResponse(code = 200, message = "created Customer", response = Customer.class)})
  public Response addCustomer(@ApiParam(value = "customer to add", required = true) NewCustomer body
@@ -35,7 +35,7 @@ public class CustomersApi {
     @Path("/{customerId}/links")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "Creates a new link", response = Customer.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Создать новую связь клиентов", notes = "Creates a new link", response = Customer.class, tags = {})
     @io.swagger.annotations.ApiResponses(value = {
             @io.swagger.annotations.ApiResponse(code = 200, message = "new linked Customer", response = Customer.class)})
     public Response addLink(@ApiParam(value = "ID of customer", required = true) @PathParam("customerId") Long customerId
@@ -48,9 +48,9 @@ public class CustomersApi {
     @Path("/{customerId}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "deletes a single customer by id", response = void.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Удалить клиента", notes = "deletes a single customer by id", response = void.class, tags = {})
     @io.swagger.annotations.ApiResponses(value = {
-            @io.swagger.annotations.ApiResponse(code = 204, message = "customer deleted", response = void.class)})
+            @io.swagger.annotations.ApiResponse(code = 200, message = "customer deleted", response = void.class)})
     public Response deleteCustomer(@ApiParam(value = "ID of customer to delete", required = true) @PathParam("customerId") Long customerId
             , @Context SecurityContext securityContext)
             throws NotFoundException {
@@ -60,9 +60,9 @@ public class CustomersApi {
     @Path("/{customerId}/links/{linkId}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "Deletes link", response = void.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Удалить связь клиентов", notes = "Deletes link", response = void.class, tags = {})
     @io.swagger.annotations.ApiResponses(value = {
-            @io.swagger.annotations.ApiResponse(code = 204, message = "link deleted", response = void.class)})
+            @io.swagger.annotations.ApiResponse(code = 200, message = "link deleted", response = void.class)})
     public Response deleteLink(@ApiParam(value = "ID of customer", required = true) @PathParam("customerId") Long customerId
             , @ApiParam(value = "ID of linked customer to delete", required = true) @PathParam("linkId") Long linkId
             , @Context SecurityContext securityContext)
@@ -73,7 +73,7 @@ public class CustomersApi {
     @Path("/{customerId}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "Returns a customer by id", response = Customer.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Получить информацию по клиенту", notes = "Returns a customer by id", response = Customer.class, tags = {})
     @io.swagger.annotations.ApiResponses(value = {
             @io.swagger.annotations.ApiResponse(code = 200, message = "requested Customer", response = Customer.class)})
     public Response findCustomer(@ApiParam(value = "ID of customer to fetch", required = true) @PathParam("customerId") Long customerId
@@ -96,9 +96,9 @@ public class CustomersApi {
     @Path("/{customerId}/links")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "Returns links to other customers", response = Customer.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Получить все связи клиента", notes = "Returns links to other customers", response = Customer.class, responseContainer = "List", tags = {})
     @io.swagger.annotations.ApiResponses(value = {
-            @io.swagger.annotations.ApiResponse(code = 200, message = "linked Customers", response = Customer.class)})
+            @io.swagger.annotations.ApiResponse(code = 200, message = "linked Customers", response = Customer.class, responseContainer = "List")})
     public Response getLinks(@ApiParam(value = "ID of customer to fetch links", required = true) @PathParam("customerId") Long customerId
             , @Context SecurityContext securityContext)
             throws NotFoundException {
@@ -108,9 +108,9 @@ public class CustomersApi {
     @Path("/{customerId}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    @io.swagger.annotations.ApiOperation(value = "", notes = "updates a single customer", response = void.class, tags = {})
+    @io.swagger.annotations.ApiOperation(value = "Изменить имя клиента", notes = "updates a single customer", response = Customer.class, tags = {})
     @io.swagger.annotations.ApiResponses(value = {
-            @io.swagger.annotations.ApiResponse(code = 204, message = "updated Customer", response = void.class)})
+            @io.swagger.annotations.ApiResponse(code = 200, message = "updated Customer", response = Customer.class)})
     public Response updateCustomer(@ApiParam(value = "ID of customer for update", required = true) @PathParam("customerId") Long customerId
             , @ApiParam(value = "updated customer", required = true) NewCustomer body
             , @Context SecurityContext securityContext)

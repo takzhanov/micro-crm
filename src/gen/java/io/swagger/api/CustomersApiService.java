@@ -6,7 +6,7 @@ import io.swagger.model.NewLink;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-27T20:43:44.258Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-27T23:29:24.415Z")
 public abstract class CustomersApiService {
     public abstract Response addCustomer(NewCustomer body, SecurityContext securityContext) throws NotFoundException;
 
