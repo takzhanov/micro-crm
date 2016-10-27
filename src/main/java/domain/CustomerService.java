@@ -4,7 +4,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-//должен быть Синглтон по смыслу, для эмуляции инстанцируется один раз в статическое поле АПИ сервиса
+//Весь бэкэнд для работы с Клиентами
+//должен быть Синглтон по смыслу,
+// для эмуляции инстанцируется один раз в статическое поле АПИ сервиса
 public class CustomerService {
     private long nextId = 0;
     private Map<Long, CustomerModel> storage = new HashMap<>();
